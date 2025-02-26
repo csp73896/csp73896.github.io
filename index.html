@@ -1,21 +1,702 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+    	audio {
+            width: 140px;
+            height: 20px;
+        }
+        body {
+            font-size: 14px;
+        }
+        h1 {
+            font-size: 22px;
+        }
+        h2 {
+            font-size: 18px;
+        }
+        h3 {
+            font-size: 16px;
+        }
+        table {
+            font-size: 12px;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Player</title>
+    <title>Children's Voice Privacy</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-
-    <h1>My GitHub.io Audio Player</h1>
+    <header style="text-align: center;">
+        <h1>Children’s Voice Privacy: First Steps And Emerging Challenges</h1>
+    </header>
     
-    <!-- Audio Player -->
-    <audio controls>
-        <source src="audio/sample.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
+    <section>
+        <h2 style="text-align: center;">Abstract</h2>
+        <p style="text-align: justify; text-align-last: center; margin: 0 10%;">Children are one of the most under-represented groups in speech technologies, as well as one of the most vulnerable in terms of privacy. Despite this, anonymization techniques targeting this population have received little attention. In this study, we seek to bridge this gap, and establish a baseline for the use of voice anonymization techniques designed for adult speech when applied to children's voices. Such an evaluation is essential, as children's speech presents a distinct set of challenges when compared to that of adults. This study comprises three children’s datasets, six anonymization methods, and objective and subjective utility metrics for evaluation. Our results show that existing systems for adults are still able to protect children's voice privacy, but suffer from much higher utility degradation. In addition, our subjective study displays the challenges of automatic evaluation methods for speech quality in children's speech, highlighting the need for further research.
+</p>
+    </section>
+    
+    <section>
+        <p style="text-align: justify; text-align-last: center; margin: 0 10%;"><br>NOTE: Due to license compliance, we are not showcasing audio files regarding MyST dataset
+</p>
+    </section>
+    
+    <section>
+        <h2>Audio samples of voice anonymization systems are as below,
+</h2>
+        <h3>SpeechOcean762: Age Group 1: 6-10</h3>
+        <table>
+            <tr>
+                <th>System Name</th>
+                <th>Sample 1</th>
+                <th>Sample 2</th>
+                <th>Sample 3</th>
+            </tr>
+            <tr>
+                <td><b>Original</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>McAdams</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>ASR-BN</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>STTS</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>NAC</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>KNN-VC</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr> 
+            <tr>
+                <td><b>KNN-VC-R</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>    
+        </table>
+    </section>
+<section>
 
-    <script src="script.js"></script>
+        <h3>SpeechOcean762: Age Group 2: 11-15</h3>
+        <table>
+            <tr>
+                <th>System Name</th>
+                <th>Sample 1</th>
+                <th>Sample 2</th>
+                <th>Sample 3</th>
+            </tr>
+            <tr>
+                <td><b>Original</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>McAdams</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>ASR-BN</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>STTS</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>NAC</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>KNN-VC</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr> 
+            <tr>
+                <td><b>KNN-VC-R</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>    
+        </table>
+    </section>
+<section>
+
+        <h3>Samrmur: Age Group 1: 6-10</h3>
+        <table>
+            <tr>
+                <th>System Name</th>
+                <th>Sample 1</th>
+                <th>Sample 2</th>
+                <th>Sample 3</th>
+            </tr>
+            <tr>
+                <td><b>Original</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>McAdams</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>ASR-BN</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>STTS</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>NAC</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>KNN-VC</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr> 
+            <tr>
+                <td><b>KNN-VC-R</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>    
+        </table>
+    </section>
+<section>
+
+        <h3>Samrmur: Age Group 2: 12-16</h3>
+        <table>
+            <tr>
+                <th>System Name</th>
+                <th>Sample 1</th>
+                <th>Sample 2</th>
+                <th>Sample 3</th>
+            </tr>
+            <tr>
+                <td><b>Original</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>McAdams</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>ASR-BN</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>STTS</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>NAC</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>KNN-VC</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr> 
+            <tr>
+                <td><b>KNN-VC-R</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>    
+        </table>
+    </section>
+<section>
+        <h3>LibriSpeech: Adult</h3>
+        <table>
+            <tr>
+                <th>System Name</th>
+                <th>Sample 1</th>
+                <th>Sample 2</th>
+                <th>Sample 3</th>
+            </tr>
+            <tr>
+                <td><b>Original</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>McAdams</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>ASR-BN</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>STTS</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_original_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+            <tr>
+                <td><b>NAC</b></td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_1.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_2.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td>
+                    <audio controls>
+                        <source src="audio/speech762_age6-10_mcAdams_3.mp3" type="audio/mpeg">
+                    </audio>
+                </td>
+            </tr>
+        </table>
+    </section>
 </body>
 </html>
